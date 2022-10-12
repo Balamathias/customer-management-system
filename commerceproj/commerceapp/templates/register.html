@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>
+    <title>Register</title>
+    <style>
+        label{
+            line-height: 35px;
+            color:gold;
+            font-weight: normal;
+            font-size: 14px;
+        }
+
+        ul{
+            padding:20px;
+            background:#fff;
+            border-radius:4px;
+        }
+
+        ul li{
+            color:red;
+            font-size:14px
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+            
+        <div class="regform">
+            <h3> Sign up below:</h3>
+            <form method="POST" action=''>
+                {% csrf_token %}
+                <label>{{form.username.label}}</label>
+                {{form.username}}
+
+                <label>{{form.email.label}}</label>
+                {{form.email}}
+
+                <label>{{form.password1.label}}</label>
+                {{form.password1}}
+
+                <label>{{form.password2.label}}</label>
+                {{form.password2}}
+
+                <input type='submit'>
+            </form>
+
+            <p style="color:#fff">Already have an account? <a href='/login' style="color:dodgerblue">Login</a></p>
+        </div>
+        <div class="errors">
+            {{form.errors}}
+        </div>
+    </div>
+    <script>
+        {% comment %} let fields = document.getElementsByTagName('input')
+        fields[0].placehholder = 'Username' 
+        fields[1].placehholder = 'email@gmail.com'
+        fields[2].placehholder = 'Enter password'
+        fields[3].placehholder = 'Confirm password' {% endcomment %}
+    </script>
+</body>
+</html>

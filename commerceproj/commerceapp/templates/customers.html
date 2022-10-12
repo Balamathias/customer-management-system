@@ -1,0 +1,70 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+    <br>
+    <div class="row">
+        <div class="col-md">
+            <div class="card card-body">
+                <h5>Customer</h5>
+                <hr>
+                <a href="#" class="btn btn-primary btn-sm btn-block">
+                    Update Customer
+                </a>
+                <a href="/createorder/{{customer.id}}" class="btn btn-primary btn-sm btn-block">
+                    Place order
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md">
+            <div class="card card-body">
+                <h5>Contact Information</h5>
+                <hr>
+                <p>Email: {{customer.email}}</p>
+                <p>Phone: {{customer.phone}}</p>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="card card-body">
+                <h5>Total Orders</h5>
+                <hr>
+                <h1 style="text-align:center">{{order_count}}</h1>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="card card-body">
+            <form action="">
+                {{my_filter.form}}
+                <button class="btn btn-primary text-white p" style="width:100px">Search</button>
+            </form>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md">
+            <table class="table table-sm">
+                <tr>
+                    <th>Product</th>
+                    <th>Notes</th>
+                    <th>Date Ordered</th>
+                    <th>Status</th>
+                    <th><a href="updateorder/">Update</a></th>
+                    <th><a href="deleteorder/">Delete</a></th>
+                </tr>
+                {% for order in orders %}
+                <tr>
+                    <td>{{order.product}}</td>
+                    <td>{{order.product.note}}</td>
+                    <td>{{order.date}}</td>
+                    <td>{{order.status}}</td>
+                    <td><a href="/updateorder/{{order.id}}" class="btn btn-info btn-sm btn-block">Update</a></td>
+                    <td><a href="/delete/{{order.id}}" class="btn btn-danger btn-sm btn-block">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+{% block content %}
+{% include "navbar.html" %}
+
+<div class="container card card-body">
+    <h5>Place your orders</h5>
+    <form action="" class="form" method="POST">
+        {% csrf_token %}
+        {{formset.management_form}}
+        {% for form in formset %}
+            {{form}}
+            <hr>
+        {% endfor %}
+        <input type="submit" class="btn bg-success btn-sm btn-block text-white" value="Submit" width="100px">
+    </form>
+</div>
+
+{% endblock content %}

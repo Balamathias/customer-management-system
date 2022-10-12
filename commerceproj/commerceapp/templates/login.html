@@ -1,0 +1,101 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>
+    <title>Login</title>
+    <style>
+        .messages{
+            background: #fff;
+            color:green;
+            font-size:14px;
+            padding:12px;
+            border-radius:4px;
+        }
+
+        p{
+            font-size:14px;
+        }
+
+        
+        *{box-sizing:border-box;}
+        body{
+            background-color:grey;
+            display:flex;
+            align-items:center;
+            justify-content:center
+        }
+
+        .container{
+            display:flex;
+            flex-direction:column;
+            align-self:center;
+            background-color:#fff;
+            padding: 60px 20px;
+            border-radius:4px;
+            width:350px;
+            height:100vh;
+        }
+
+        h3{
+            color:green;
+            padding:10px 0;
+        }
+
+        input[type=email]{
+            padding:8px 10px;
+            border-radius:4px;
+            border:1px solid green;
+            outline:none;
+            width:100%;
+        }
+
+        label{
+            line-height:30px;
+            font-weight:bolder;
+        }
+
+       input[type=submit]{
+            padding:10px 12px;
+            text-align:center;
+            color:white;
+            background:green;
+            border-radius:4px;
+            border:1px solid green;
+            outline:none;
+            margin-top:8px;
+            cursor:pointer;
+       } 
+
+       p{
+        line-height:25px;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+    <h2>Login</h2>
+
+    <form method='POST' action='' class="logform">
+        {% csrf_token %}
+        <label>Username: </label>
+        <input type ='text' name='username'>
+        <label>Password: </label>
+        <input type ='password' name='password'>
+        <input type='submit'>
+    </form>
+
+    {% for message in messages %}
+    <p class="messages">{{message}}</p>
+    {% endfor %}
+
+    <p>Don't have an account yet? <a href='/register'>Signup</a></p>
+    <p>Forgotten Password? <a href="/reset_password">Reset Password</a></p>
+
+    </div>
+</body>
+</html>

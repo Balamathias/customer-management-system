@@ -1,0 +1,45 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+
+<style>
+    .profile-pic{
+        width:150px;
+        height:150px;
+        object-fit:cover;
+        border-radius:50%;
+        border:1px double grey;
+        display:flex;
+        align-self:center
+    }
+
+    h3{
+        text-align:center;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="card card-body">
+            <a href="/" class="btn btn-primary">&#8592; Back to profile</a>
+            <hr>
+            <h3>Account settings</h3>
+            <br>
+            <img src="{{request.user.customer.profile_pic.url}}" alt="" class="profile-pic">
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="card card-body">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="Update Information" class="btn btn-secondary">
+            </form>
+        </div>
+    </div>
+</div>
+
+ 
+{% endblock content %}

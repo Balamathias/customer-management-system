@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+    {%load static%}
+
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>
+
+    {% if user.is_authenticated %}
+    <a href="logout">logout</a>
+    {% else %}
+    <a href="login">login</a>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+    <h1>Welcome {{user.username}}<h1>
+    {% else %}
+    <h1>Welcome World<h1>
+    {% endif %}
+
+    {% for feature in features %}
+    <div class="indexdisplay">
+        <h4>{{feature.id}}</h4>
+        <p>{{user.username}}, Check out the amazing features of some of our products.</p>
+        <h4>{{feature.name}}</h4>
+        <h4>{{feature.details}}</h4>
+    </div>
+        {% endfor %}
+
+
+</body>
+</html>

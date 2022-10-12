@@ -1,0 +1,60 @@
+{% extends "main.html" %}
+
+{% block content %}
+{% include "navbar.html" %}
+
+<style>
+    .card h5{
+        color:white;
+        text-align:center;
+    }
+
+
+</style>
+
+<div class="row info-div">
+    <div class="col-md ">
+        <div class="card card-body bg-primary">
+            <h5>Total orders</h5>
+            <hr>
+            <h1 align="center">{{orderlength}}</h1>
+        </div>
+    </div>
+    <div class="col-md ">
+        <div class="card card-body bg-success">
+            <h5>Orders delivered</h5>
+            <hr>
+            <h1 align="center">{{total_delivered}}</h1>
+        </div>
+    </div>
+    <div class="col-md">
+        <div class="card card-body bg-warning">
+            <h5>Orders pending</h5>
+            <hr>
+            <h1 align="center">{{total_pending}}</h1>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md">
+        <table class="table table-sm">
+            <tr>
+                <th>Product</th>
+                <th>Notes</th>
+                <th>Date Ordered</th>
+                <th>Status</th>
+            </tr>
+            {% for order in orders %}
+            <tr>
+                <td>{{order.product}}</td>
+                <td>{{order.product.note}}</td>
+                <td>{{order.date}}</td>
+                <td>{{order.status}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+{% endblock content %}

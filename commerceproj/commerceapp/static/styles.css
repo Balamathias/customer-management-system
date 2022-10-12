@@ -1,0 +1,12 @@
+body{
+    background-color: rgb(134, 134, 160);
+}
+
+.info-div{
+    padding:15px 0;
+    align-items: center;
+}
+
+.info-div h5{
+    color: #fff;
+}

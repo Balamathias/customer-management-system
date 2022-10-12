@@ -1,0 +1,116 @@
+body{
+    background-color: grey;
+}
+
+div h2:nth-child(1){
+    text-align: left;
+}
+
+/* register css */
+
+.container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.regform{
+    padding:40px 20px;
+    background: rgb(51, 43, 90);
+    max-width: 343px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,.35);
+}
+
+input[type=text],input[type=password],input[type=email]{
+    width: 100%;
+    padding:10px 12px;
+    border: none;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+input[type=submit]{
+    text-align: center;
+    padding:10px 12px;
+    border: none;
+    background-color: rgb(3, 118, 28);
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: white;
+    margin-top: 8px;
+}
+
+input[type=submit]:hover{
+    background: dodgerblue;
+    outline: 2px dodgerblue;
+}
+
+h3{
+    color: rgb(224, 233, 222);
+}
+
+h5{
+    color: red;
+}
+
+label{
+    line-height: 35px;
+    color:gold;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+
+/* logform css */
+
+.logform{
+    padding:40px 20px;
+    background: rgb(51, 43, 90);
+    max-width: 476px;
+    border-radius: 5px;
+}
+
+/* indexdisplay */
+
+.indexdisplay{
+    padding: 12px;
+    border: 1px solid blue;
+    border-radius: 5px;
+    margin: 7px;
+    background-image:radial-gradient(rgb(22, 114, 175),rgb(17, 8, 47));
+}
+
+.indexdisplay p{
+    color:rgb(28, 48, 227);
+    font-size: small;
+    text-align: center;
+}
+
+a{
+    text-decoration:2px dotted rgb(128, 0, 255);
+    color: rgb(111, 9, 235);
+    padding: 10px 12px;
+    /* float:right;
+    background-color: rgb(143, 49, 2);
+    border-radius: 4px; */
+}
+
+/* p{
+    color: rgb(76, 0, 255);
+    font-weight: normal;
+    font-style: italic;
+} */
+
+.indexdisplay h4{
+    color:rgb(24, 17, 88);
+    text-align: center;
+}
+
+label{
+    line-height:25px;
+    color:white;
+}

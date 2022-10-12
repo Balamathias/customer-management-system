@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{% block content %}
+{% include "navbar.html" %}
+
+<div class="card card-body">
+    <h5>Add Customer</h5>
+    <form action="addcustomer/" class="form" method="post">
+        {% csrf_token %}
+        <label for="name" class="label">Name:</label>
+        <input type="text" class="input btn-block" name="username" id="name">
+        <label for="phone" class="label">Phone number:</label>
+        <input type="number" class="input btn-block" name="phone" id="phone">
+        <input type="submit" class="btn bg-primary btn-sm btn-block text-white" value="Submit">
+    </form>
+</div>
+
+{% endblock content %}
